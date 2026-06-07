@@ -207,21 +207,97 @@
           <h2>Garage Gallery</h2>
         </div>
         <div class="gallery-grid">
-          <figure class="gallery-card gallery-car reveal"><figcaption>Shadow Body</figcaption></figure>
-          <figure class="gallery-card gallery-light reveal"><figcaption>Light Tunnel</figcaption></figure>
-          <figure class="gallery-card gallery-wheel reveal"><figcaption>Forged Wheel</figcaption></figure>
-          <figure class="gallery-card gallery-cabin reveal"><figcaption>Clean Cabin</figcaption></figure>
-          <figure class="gallery-card gallery-foam reveal"><figcaption>Foam Wash</figcaption></figure>
-          <figure class="gallery-card gallery-garage reveal"><figcaption>Black Garage</figcaption></figure>
+          <figure class="gallery-card gallery-car reveal">
+            <figcaption>
+              <span class="gallery-name">Shadow Body</span>
+              <span class="gallery-desc">暗闇に浮かぶボディラインと、磨き上げた塗装面の深い艶。</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card gallery-light reveal">
+            <figcaption>
+              <span class="gallery-name">Light Tunnel</span>
+              <span class="gallery-desc">LEDライトの反射で、コーティング後の歪みのない光沢を確認。</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card gallery-wheel reveal">
+            <figcaption>
+              <span class="gallery-name">Forged Wheel</span>
+              <span class="gallery-desc">ホイールやタイヤまわりまで丁寧に整え、足元の印象を引き締める。</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card gallery-cabin reveal">
+            <figcaption>
+              <span class="gallery-name">Clean Cabin</span>
+              <span class="gallery-desc">黒いレザーとパネルの質感を整え、乗り込む瞬間の清潔感を演出。</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card gallery-foam reveal">
+            <figcaption>
+              <span class="gallery-name">Foam Wash</span>
+              <span class="gallery-desc">泡と水の流れで汚れを包み込み、塗装面にやさしくアプローチ。</span>
+            </figcaption>
+          </figure>
+          <figure class="gallery-card gallery-garage reveal">
+            <figcaption>
+              <span class="gallery-name">Black Garage</span>
+              <span class="gallery-desc">静かなガレージ空間で、車の存在感と仕上がりを引き立てる。</span>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="cta section-dark" id="contact">
+      <section class="booking section-dark" id="contact">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Booking Request</p>
+          <h2>Private Detailing Appointment</h2>
+        </div>
+        <div class="booking-layout">
+          <p class="booking-lead reveal">
+            愛車の状態や希望する仕上がりに合わせて、最適なプランをご提案します。<br />
+            プレミアム洗車、コーティング、内装クリーニングまで、まずはお気軽にご相談ください。
+          </p>
+          <form class="booking-form reveal" aria-label="Booking request form" onsubmit="return false;">
+            <div class="field">
+              <label for="bk-name">Name</label>
+              <input id="bk-name" name="name" type="text" placeholder="山田 太郎" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="bk-email">Email</label>
+              <input id="bk-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="bk-car">Car Model</label>
+              <input id="bk-car" name="car-model" type="text" placeholder="例：Sedan / SUV / Coupe" />
+            </div>
+            <div class="field">
+              <label for="bk-service">Service Type</label>
+              <select id="bk-service" name="service-type">
+                <option value="" disabled selected>選択してください</option>
+                <option>Premium Wash</option>
+                <option>Ceramic Coating</option>
+                <option>Interior Detailing</option>
+                <option>Wheel &amp; Tire Care</option>
+                <option>Full Detail</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="bk-message">Message</label>
+              <textarea id="bk-message" name="message" rows="4" placeholder="気になる箇所や希望の仕上がりをご記入ください。"></textarea>
+            </div>
+            <button class="btn btn-primary booking-submit" type="submit">Send Request</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="cta section-panel">
         <div class="cta-inner reveal">
           <p class="eyebrow">Private Booking</p>
           <h2>Give Your Car the Finish It Deserves</h2>
-          <p>いつもの愛車を、ショールームのような艶と存在感へ。</p>
-          <a class="btn btn-primary" href="mailto:booking@blackline-detailing.example">Book a Detail</a>
+          <p>
+            いつもの愛車を、ショールームのような艶と存在感へ。<br />
+            まずは希望の仕上がりを相談して、最適なディテーリングプランを選びましょう。
+          </p>
+          <a class="btn btn-primary" href="#contact">Book a Detail</a>
         </div>
       </section>
     </main>
