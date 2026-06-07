@@ -531,7 +531,7 @@ h3 {
 }
 
 .service-grid {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .service-card,
@@ -554,8 +554,76 @@ h3 {
 }
 
 .service-card {
+  position: relative;
+  overflow: hidden;
   min-height: 292px;
-  padding: 28px;
+  padding: 34px;
+  border-color: rgba(203, 210, 215, 0.16);
+  background:
+    linear-gradient(118deg, transparent 0%, rgba(255, 255, 255, 0.07) 36%, transparent 58%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018) 48%, rgba(143, 168, 183, 0.035)),
+    rgba(10, 12, 14, 0.82);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 28px 90px rgba(0, 0, 0, 0.48);
+}
+
+.service-card::before,
+.service-card::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
+}
+
+.service-card::before {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 247, 248, 0.22), rgba(143, 168, 183, 0.48), transparent);
+  opacity: 0.72;
+  transition: opacity 260ms ease, filter 260ms ease;
+}
+
+.service-card::after {
+  inset: -45% auto -45% -55%;
+  width: 46%;
+  background: linear-gradient(105deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  opacity: 0;
+  transform: translateX(0) skewX(-12deg);
+  transition: opacity 260ms ease, transform 620ms ease;
+}
+
+.service-card:hover {
+  border-color: rgba(203, 210, 215, 0.28);
+  background:
+    linear-gradient(118deg, transparent 0%, rgba(255, 255, 255, 0.095) 36%, transparent 58%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.022) 48%, rgba(143, 168, 183, 0.055)),
+    rgba(10, 12, 14, 0.88);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 32px 100px rgba(0, 0, 0, 0.58);
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  filter: brightness(1.35);
+}
+
+.service-card:hover::after {
+  opacity: 1;
+  transform: translateX(380%) skewX(-12deg);
+}
+
+.service-card h3,
+.service-card p,
+.service-kicker {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card h3 {
+  margin-bottom: 16px;
 }
 
 .service-card p {
@@ -564,77 +632,32 @@ h3 {
   line-height: 1.8;
 }
 
-.service-icon {
-  position: relative;
-  display: block;
-  width: 58px;
-  height: 58px;
-  margin-bottom: 34px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.035);
+.service-kicker {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 42px;
+  color: rgba(222, 228, 232, 0.92);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-.service-icon::before,
-.service-icon::after {
-  position: absolute;
+.service-kicker::after {
+  flex: 1;
+  height: 1px;
+  min-width: 72px;
   content: "";
+  background: linear-gradient(90deg, rgba(245, 247, 248, 0.68), rgba(143, 168, 183, 0.2), transparent);
+  opacity: 0.74;
+  transition: opacity 260ms ease, filter 260ms ease;
 }
 
-.wash-icon::before {
-  inset: 16px 13px 18px;
-  border: 1px solid var(--metal);
-  border-top-color: transparent;
-  transform: rotate(45deg);
-}
-
-.wash-icon::after {
-  right: 12px;
-  bottom: 11px;
-  width: 22px;
-  height: 1px;
-  background: var(--blue);
-}
-
-.coating-icon::before {
-  inset: 12px;
-  border: 1px solid var(--metal);
-  transform: rotate(45deg);
-}
-
-.coating-icon::after {
-  inset: 24px 10px auto;
-  height: 1px;
-  background: var(--blue);
-}
-
-.interior-icon::before {
-  right: 15px;
-  bottom: 11px;
-  left: 15px;
-  height: 32px;
-  border: 1px solid var(--metal);
-  border-radius: 16px 16px 3px 3px;
-}
-
-.interior-icon::after {
-  right: 11px;
-  bottom: 11px;
-  left: 11px;
-  height: 1px;
-  background: var(--blue);
-}
-
-.wheel-icon::before {
-  inset: 12px;
-  border: 2px solid var(--metal);
-  border-radius: 50%;
-  background: conic-gradient(from 45deg, transparent, rgba(143, 168, 183, 0.5), transparent);
-}
-
-.wheel-icon::after {
-  inset: 26px;
-  border-radius: 50%;
-  background: var(--metal);
+.service-card:hover .service-kicker::after {
+  opacity: 1;
+  filter: brightness(1.35);
 }
 
 .compare-grid {
